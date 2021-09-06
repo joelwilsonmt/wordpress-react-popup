@@ -4,8 +4,8 @@ import Form from "./Form"
 const weekInMilliSeconds = 7 * 24 * 60 * 60 * 1000;
 const day = weekInMilliSeconds / 7;
 
-const modalHeader = "Hello—don't forget to join The Review!";
-const modalSubheader = 'Regularly receive interesting industry and Submittable content right in your inbox.';
+const modalHeader = "Don’t forget to sign up for The Review";
+const modalSubheader = 'It’s time to think differently about social impact. Subscribe today and have the latest insights hit your inbox twice a month.';
 
 const localStorageSupported = () => {
     const test = 'test';
@@ -28,6 +28,8 @@ const getLastSeen = () => {
 const setModalTimeSeenInLocalStorage = () => {
     localStorage.setItem("modal", JSON.stringify(new Date().getTime()))
 }
+
+const airplane = 'https://blog.submittable.com/wp-content/uploads/AirplanePopup.svg'
 
 const ModalInnards = ({ setHasBeenSeen, toggle, ...props }) => {
     React.useEffect(() => {
@@ -60,14 +62,16 @@ const ModalInnards = ({ setHasBeenSeen, toggle, ...props }) => {
                     }}
                 />
                 <img
-                    src="https://blog.submittable.com/wp-content/uploads/Airplane.svg"
+                    src={airplane}
                     className="modal-plane mobile-plane"
                     alt="Airplane" />
+
                 <h2 className="modal-header">
                     {modalHeader}
                 </h2>
+
                 <img
-                    src="https://blog.submittable.com/wp-content/uploads/Airplane.svg"
+                    src={airplane}
                     className="modal-plane large-plane"
                     alt="Airplane" />
 
